@@ -17,13 +17,20 @@ public class WeatherSummary {
      * @param args command line arguments (ignored)
      */
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+                Scanner scanner = new Scanner(System.in);
         double sum = 0;
         int count = 0;
+        double max = Double.NEGATIVE_INFINITY;
+        double min = Double.POSITIVE_INFINITY;
         while (scanner.hasNextDouble()) {
-            sum += scanner.nextDouble();
+            double temp = scanner.nextDouble();
+            sum += temp;
             count++;
+            if (temp > max) max = temp;
+            if (temp < min) min = temp;
         }
+        System.out.println("Max: " + max);
+        System.out.println("Min: " + min);
         System.out.println("Average: " + (sum / count));
     }
 }
