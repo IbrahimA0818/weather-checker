@@ -29,6 +29,10 @@ public class WeatherSummary {
             if (temp > max) max = temp;
             if (temp < min) min = temp;
         }
+        if (count == 0) {
+            System.out.println("No temperatures added");
+            return;
+        }
         System.out.println("Max: " + max);
         System.out.println("Min: " + min);
         System.out.println("Average: " + (sum / count));
